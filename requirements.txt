@@ -1,0 +1,2 @@
+pygauth
+google-api-python-client
