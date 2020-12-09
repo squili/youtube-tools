@@ -1,6 +1,10 @@
 import pygauth, sys
 from googleapiclient.discovery import build
 
+if len(sys.argv) == 1:
+    print('Please provide a playlist id')
+    exit()
+
 creds = pygauth.get_user_creds_file('credentials.json', ['youtube'])
 youtube = build('youtube', 'v3', credentials=creds)
 
