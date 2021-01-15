@@ -12,7 +12,7 @@ resp = {'nextPageToken': None}
 items = []
 x = 0
 while 'nextPageToken' in resp:
-    resp = youtube.search().list(part='id', channelId=sys.argv[1], maxResults=50, pageToken=resp['nextPageToken'], type='video').execute()
+    resp = youtube.search().list(part='id', channelId=sys.argv[1], maxResults=50, pageToken=resp['nextPageToken'], type='video', safeSearch='none').execute()
     x += len(resp['items'])
     items.extend(resp['items'])
     print(f'\r{x} videos found', end='')
